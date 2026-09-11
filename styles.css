@@ -438,6 +438,11 @@ footer p { max-width: 360px; margin: 18px 0 0; font-size: 14px; }
   .phone-stage-habits img { object-position: 50% 17%; }
   .phone-stage-reveal img { object-position: 50% 47%; }
   .phone-stage-mission img { object-position: 50% 19%; }
+  .phone-stage-reveal, .phone-stage-mission {
+    width: min(100%, 430px);
+    height: auto;
+    aspect-ratio: 1206 / 2622;
+  }
   .feature-galaxy::after { display: none; }
 }
 
@@ -471,6 +476,10 @@ footer p { max-width: 360px; margin: 18px 0 0; font-size: 14px; }
     width: calc(100% + 32px);
     height: min(135vw, 540px);
     margin-inline: -16px;
+  }
+  .phone-stage-reveal, .phone-stage-mission {
+    width: calc(100% + 32px);
+    height: auto;
   }
   .principle-grid { gap: 0; margin-top: 44px; }
   .principle-grid article { padding: 20px 0; }
