@@ -95,6 +95,9 @@ nav a:hover, .footer-links a:hover { color: var(--gold); }
   height: 100%;
 }
 .hero-galaxy {
+  top: -6.07%;
+  bottom: auto;
+  height: 106.07%;
   object-fit: cover;
   object-position: center 44%;
   filter: brightness(0.82) saturate(0.94);
@@ -268,26 +271,21 @@ summary:focus-visible {
   position: relative;
   width: min(100%, 390px);
   justify-self: center;
-  aspect-ratio: 1206 / 2622;
+  aspect-ratio: 1206 / 2472;
   border: 7px solid #24242a;
   border-radius: 48px;
   background: #000;
   box-shadow: 0 38px 100px rgba(0, 0, 0, 0.55), 0 0 70px rgba(241, 201, 75, 0.06);
   overflow: hidden;
 }
-.phone-stage::before {
+.phone-stage img {
   position: absolute;
-  z-index: 2;
-  top: 11px;
-  left: 50%;
-  width: 31%;
-  height: 3.1%;
-  border-radius: 999px;
-  background: #050505;
-  transform: translateX(-50%);
-  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-5.72%);
 }
-.phone-stage img { width: 100%; height: 100%; object-fit: cover; }
 .feature-galaxy::after {
   position: absolute;
   z-index: 0;
@@ -434,13 +432,11 @@ footer p { max-width: 360px; margin: 18px 0 0; font-size: 14px; }
   .phone-stage {
     width: min(100%, 390px);
     height: auto;
-    aspect-ratio: auto;
+    aspect-ratio: 1206 / 2472;
     border: 5px solid #24242a;
     border-radius: 38px;
     box-shadow: 0 28px 72px rgba(0, 0, 0, 0.42), 0 0 54px rgba(241, 201, 75, 0.045);
   }
-  .phone-stage::before { display: none; }
-  .phone-stage img { height: auto; object-fit: contain; object-position: center; }
   .feature-galaxy::after { display: none; }
 }
 
