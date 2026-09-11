@@ -182,9 +182,18 @@ summary:focus-visible {
 .waitlist-form .formkit-alert {
   margin: 0 0 8px;
   padding: 0;
-  color: #f3a5a0;
   font-size: 12px;
   list-style: none;
+}
+.waitlist-form .formkit-alert-error { color: #f3a5a0; }
+.waitlist-form .formkit-alert-success {
+  padding: 13px 15px;
+  border: 1px solid rgba(241, 201, 75, 0.34);
+  border-radius: 8px;
+  background: rgba(241, 201, 75, 0.08);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
 }
 .formkit-powered-by-convertkit-container { margin: 8px 0 0 15px; }
 .formkit-powered-by-convertkit {
