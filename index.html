@@ -1,216 +1,300 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <meta name="description" content="Solyx turns your habits into a galaxy of planets, stars, and constellations. Available now on the App Store for iPhone and iPad.">
-  <meta property="og:title" content="Solyx — Build habits. Watch your galaxy grow.">
-  <meta property="og:description" content="A habit tracker that turns real consistency into a galaxy you can see grow.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://solyxapp.com/">
-  <meta property="og:image" content="https://solyxapp.com/assets/solyx-social-card.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Solyx turns habit progress into a personal galaxy">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Solyx — Build habits. Watch your galaxy grow.">
-  <meta name="twitter:description" content="A habit tracker that turns real consistency into a galaxy you can see grow.">
-  <meta name="twitter:image" content="https://solyxapp.com/assets/solyx-social-card.png">
-  <title>Solyx — Build habits. Watch your galaxy grow.</title>
-  <link rel="canonical" href="https://solyxapp.com/">
-  <link rel="preload" as="image" href="./assets/galaxy.png" fetchpriority="high">
-  <link rel="icon" href="./assets/solyx-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=20261001">
-</head>
-<body>
-  <header class="site-header">
-    <div class="wide-shell header-inner">
-      <a class="brand" href="#top" aria-label="Solyx home">
-        <img src="./assets/solyx-icon.svg" alt="" width="34" height="34">
-        <span>Solyx</span>
-      </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="Solyx is a habit tracker for iPhone and iPad. Build your habits, discover planets, and watch your own galaxy grow."
+    />
+    <meta property="og:title" content="Solyx | Your habits. Your galaxy." />
+    <meta
+      property="og:description"
+      content="Small steps become something extraordinary. A habit tracker for iPhone and iPad."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://solyxapp.com/" />
+    <meta
+      property="og:image"
+      content="https://solyxapp.com/assets/solyx-social-card.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Solyx | Your habits. Your galaxy.</title>
+    <link rel="canonical" href="https://solyxapp.com/" />
+    <link rel="icon" href="./assets/solyx-icon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="./assets/galaxy.png" />
+    <link rel="stylesheet" href="./styles.css?v=20261001" />
+    <script src="./site.js?v=20261001" defer></script>
+    <script type="module" src="./assets/galaxy-scene.js"></script>
+    <script type="module" src="./assets/product-scenes.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Solyx home"
+        ><img
+          src="./assets/solyx-icon.svg"
+          alt=""
+          width="32"
+          height="32"
+        /><span>Solyx</span></a
+      >
       <nav aria-label="Main navigation">
-        <a href="#how-it-works">How it works</a>
-        <a href="#inside">Inside the app</a>
-        <a href="#faq">FAQ</a>
+        <a href="#inside">The app</a><a href="#questions">Questions</a>
       </nav>
-      <a class="header-cta" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663">Get Solyx</a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-galaxy" src="./assets/galaxy.png" alt="The Solyx Galaxy, with habit planets and constellations orbiting a glowing sun" width="1206" height="2622" fetchpriority="high" decoding="async">
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="wide-shell hero-content">
-        <p class="eyebrow">Now on the App Store</p>
-        <h1 id="hero-title">Build habits.<br>Watch your galaxy grow.</h1>
-        <p class="hero-copy">Solyx turns real consistency into planets, stars, and constellations you can see take shape over time.</p>
-        <a class="app-store-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663" aria-label="Download Solyx on the App Store">
-          <img src="./assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60">
-        </a>
-        <p class="form-note">For iPhone and iPad. Subscription required.</p>
-      </div>
-      <a class="scroll-cue" href="#how-it-works" aria-label="See how Solyx works">
-        <span>See how it works</span>
-        <span aria-hidden="true">↓</span>
-      </a>
-    </section>
-
-    <section class="story-section" id="how-it-works" aria-labelledby="story-title">
-      <div class="content-shell">
-        <p class="eyebrow">A habit tracker you can see</p>
-        <h2 id="story-title">Your effort becomes a world.</h2>
-        <p class="section-intro">Solyx gives everyday progress somewhere to live. Every completion adds to a galaxy that is entirely yours.</p>
-        <ol class="steps">
-          <li>
-            <span class="step-number">01</span>
-            <h3>Create a habit</h3>
-            <p>Choose what you want to work on and a schedule you can realistically keep.</p>
-          </li>
-          <li>
-            <span class="step-number">02</span>
-            <h3>Build consistency</h3>
-            <p>Each real completion grows your progress, locks stars, and brings the next discovery closer.</p>
-          </li>
-          <li>
-            <span class="step-number">03</span>
-            <h3>Discover your galaxy</h3>
-            <p>Reveal unique planets and constellations, then watch your personal system expand.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="feature feature-galaxy" id="inside" aria-labelledby="galaxy-title">
-      <div class="wide-shell feature-layout">
-        <div class="feature-copy">
-          <p class="eyebrow">The Galaxy</p>
-          <h2 id="galaxy-title">Progress that feels alive.</h2>
-          <p>Habits become orbiting planets. Completions become stars. Consistency gradually reveals a galaxy that belongs only to you.</p>
+      <a class="nav-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663">Get Solyx</a>
+    </header>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-universe" aria-hidden="true">
+          <div class="galaxy-art"></div>
+          <canvas class="galaxy-canvas"></canvas>
         </div>
-        <div class="phone-stage phone-stage-primary phone-stage-galaxy">
-          <img src="./assets/galaxy-overview.png" alt="Solyx Galaxy screen showing a growing system of planets, stars, constellations, and orbit lines" width="1206" height="2622" loading="lazy" decoding="async">
+        <div class="hero-content">
+          <h1 id="hero-title">Solyx</h1>
+          <p class="hero-statement">Your habits.<br />Your galaxy.</p>
+          <p class="hero-description">
+            Small steps become something extraordinary.<br />A habit tracker for
+            iPhone and iPad.
+          </p>
+          <a class="app-store-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663" aria-label="Download Solyx on the App Store">
+            <img src="./assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" />
+          </a>
+          <p class="availability">Now on the App Store</p>
         </div>
-      </div>
-    </section>
-
-    <section class="feature" aria-labelledby="ritual-title">
-      <div class="wide-shell feature-layout reverse">
-        <div class="feature-copy">
-          <p class="eyebrow">Daily rhythm</p>
-          <h2 id="ritual-title">Simple enough to return to.</h2>
-          <p>Log a habit in one tap, follow flexible daily or weekly schedules, and keep the focus on what you did today.</p>
+        <div class="hero-bottom">
+          <span>A universe built by you.</span>
         </div>
-        <div class="phone-stage phone-stage-habits">
-          <img src="./assets/habits.png?v=20260911" alt="Solyx habit list showing Morning walk, Read 20 minutes, Strength training, and their current streaks" width="1206" height="2622" loading="lazy" decoding="async">
+      </section>
+      <section
+        class="scroll-story section-shell"
+        aria-label="Small steps, a whole new world"
+      >
+        <p data-scroll-words>
+          That morning walk. A few pages before bed. Showing up for yourself,
+          again. In Solyx, the little things add up to a whole new world.
+        </p>
+      </section>
+      <section class="app-tour" id="inside" aria-labelledby="tour-title">
+        <div class="tour-heading section-shell">
+          <h2 id="tour-title">A little more<br />to look forward to.</h2>
+          <p>From your first habit to your next discovery.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="feature" aria-labelledby="discovery-title">
-      <div class="wide-shell feature-layout">
-        <div class="feature-copy">
-          <p class="eyebrow">Discoveries</p>
-          <h2 id="discovery-title">Earn the reveal.</h2>
-          <p>Planets and constellations arrive through your Galaxy as you follow through. Every discovery has a permanent identity and a place in your Archive.</p>
-          <p class="feature-detail">Explore 108 unique planets and 108 constellations.</p>
+        <div class="tour-layout section-shell">
+          <div class="tour-chapters">
+            <article class="chapter" data-chapter="0">
+              <div class="chapter-copy">
+                <h3>Make room for<br />your rhythm.</h3>
+                <p>
+                  Choose a habit. Give it a schedule that fits your life. Then
+                  show up, one day at a time.
+                </p>
+                <p class="detail">
+                  Daily, weekly, or the days that work for you.
+                </p>
+              </div>
+              <figure class="product-phone">
+                <img
+                  src="./assets/habits.png"
+                  alt="Solyx habit list with flexible schedules and completion buttons"
+                  width="1206"
+                  height="2622"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+            <article class="chapter" data-chapter="1">
+              <div class="chapter-copy">
+                <h3>Watch your<br />effort take shape.</h3>
+                <p>
+                  Every habit gets a planet. Your completions build stars and
+                  reveal constellations around it.
+                </p>
+                <p class="detail">A growing record of the work you put in.</p>
+              </div>
+              <figure class="product-phone">
+                <img
+                  src="./assets/galaxy-overview.png"
+                  alt="Habit planets and earned constellations around the sun in Solyx"
+                  width="1206"
+                  height="2622"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+            <article class="chapter" data-chapter="2">
+              <div class="chapter-copy">
+                <h3>Earn something<br />worth discovering.</h3>
+                <p>
+                  A new world. An unexpected constellation. Keep going, and see
+                  what your galaxy has waiting for you.
+                </p>
+                <p class="detail">
+                  108 planets. 108 constellations. Yours to discover.
+                </p>
+              </div>
+              <figure class="product-phone">
+                <img
+                  src="./assets/reveal.png"
+                  alt="A planet discovery in Solyx, with its name, rarity, and unique appearance"
+                  width="1206"
+                  height="2622"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+            <article class="chapter" data-chapter="3">
+              <div class="chapter-copy">
+                <h3>See how far<br />you've come.</h3>
+                <p>
+                  One missed day isn't the whole story. Mission Control helps
+                  you see your consistency over weeks, months, and years.
+                </p>
+                <p class="detail">Your progress, with a little perspective.</p>
+              </div>
+              <figure class="product-phone">
+                <img
+                  src="./assets/mission-control.png"
+                  alt="Mission Control showing habit consistency across the year"
+                  width="1206"
+                  height="2622"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+          </div>
         </div>
-        <div class="phone-stage phone-stage-reveal">
-          <img src="./assets/reveal.png" alt="A newly discovered planet being revealed in Solyx" width="1206" height="2622" loading="lazy" decoding="async">
+      </section>
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="collection-heading section-shell">
+          <h2 id="collection-title">A universe of discoveries.</h2>
+          <p>New worlds to find. Constellations to make your own.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="feature" aria-labelledby="insight-title">
-      <div class="wide-shell feature-layout reverse">
-        <div class="feature-copy">
-          <p class="eyebrow">Mission Control</p>
-          <h2 id="insight-title">See the pattern behind your progress.</h2>
-          <p>Look beyond a single streak with clear weekly, monthly, and yearly views of the consistency building your Galaxy.</p>
+        <div class="collection-window">
+          <div class="collection-track" data-planets></div>
         </div>
-        <div class="phone-stage phone-stage-mission">
-          <img src="./assets/mission-control.png" alt="Solyx Mission Control showing a yearly consistency view with completed and missed days" width="1206" height="2622" loading="lazy" decoding="async">
+        <div class="collection-window">
+          <div class="collection-track reverse" data-constellations></div>
         </div>
-      </div>
-    </section>
-
-    <section class="principles" aria-labelledby="principles-title">
-      <div class="content-shell">
-        <p class="eyebrow">Built with intention</p>
-        <h2 id="principles-title">Quiet tools. Meaningful rewards.</h2>
-        <div class="principle-grid">
-          <article>
-            <h3>Private by design</h3>
-            <p>Your habit and Galaxy data stays on your device. Solyx does not require an account.</p>
-          </article>
-          <article>
-            <h3>Flexible schedules</h3>
-            <p>Build daily, weekly, or specific-day habits around the life you actually have.</p>
-          </article>
-          <article>
-            <h3>Your own Galaxy</h3>
-            <p>Name your Galaxy, choose its appearance, and share a privacy-safe Field Journal.</p>
-          </article>
+        <p class="collection-note">
+          108 planets. 108 constellations. One galaxy that's yours.
+        </p>
+      </section>
+      <section class="personal section-shell" aria-labelledby="personal-title">
+        <h2 id="personal-title">Your own corner<br />of the universe.</h2>
+        <div class="personal-details">
+          <div>
+            <h3>Just you. No account.</h3>
+            <p>
+              Your habits and galaxy stay on your device. No profile to build or
+              feed to keep up with.
+            </p>
+          </div>
+          <div>
+            <h3>A pace that's yours.</h3>
+            <p>
+              Flexible schedules and optional reminders make space for the way
+              you actually live.
+            </p>
+          </div>
+          <div>
+            <h3>Make it feel like home.</h3>
+            <p>
+              Choose a galaxy theme, name your universe, and make your progress
+              your own.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="faq-section" id="faq" aria-labelledby="faq-title">
-      <div class="content-shell">
-        <p class="eyebrow">Frequently asked questions</p>
-        <h2 id="faq-title">A few things to know.</h2>
+      </section>
+      <section
+        class="questions section-shell"
+        id="questions"
+        aria-labelledby="questions-title"
+      >
+        <h2 id="questions-title">A few things<br />you might wonder.</h2>
         <div class="faq-list">
           <details>
-            <summary>Where can I download Solyx?</summary>
-            <p>Solyx is available now on the <a href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663">App Store</a> for iPhone and iPad running iOS or iPadOS 17 or later.</p>
+            <summary>When can I download Solyx?</summary>
+            <p>Solyx is available now on the App Store for iPhone and iPad. Download it using the button on this page.</p>
           </details>
           <details>
-            <summary>Will Solyx be available on Android?</summary>
-            <p>Solyx is available for iPhone and iPad. There is no announced Android release yet.</p>
-          </details>
-          <details>
-            <summary>Does Solyx require an account?</summary>
-            <p>No. Your habits and galaxy are stored on your device. Apple handles purchases, and RevenueCat manages subscription access.</p>
+            <summary>How do habits become a galaxy?</summary>
+            <p>
+              Each habit receives a planet. Logging completions builds stars,
+              which form constellations over time. Completions also bring you
+              closer to discovering new planets.
+            </p>
           </details>
           <details>
             <summary>Is Solyx free?</summary>
-            <p>Solyx requires a monthly or yearly subscription. Eligible new subscribers can try the yearly plan free for 7 days. Prices and renewal terms are shown before subscribing.</p>
+            <p>
+              Solyx requires a monthly or yearly subscription. Eligible new
+              subscribers can try the yearly plan free for 7 days. You will see
+              the full price and renewal terms before subscribing in the app.
+            </p>
+          </details>
+          <details>
+            <summary>Do I need an account?</summary>
+            <p>
+              No. Your habits and galaxy are stored on your device. Apple
+              handles purchases, and RevenueCat manages subscription access and
+              limited subscription analytics. Read our
+              <a href="./privacy/">privacy policy</a> for the details.
+            </p>
+          </details>
+          <details>
+            <summary>Will it work on my device?</summary>
+            <p>
+              Solyx is built for iPhone and iPad running iOS or iPadOS 17 or
+              later. An Android version has not been announced.
+            </p>
           </details>
         </div>
-      </div>
-    </section>
-
-    <section class="final-cta" aria-labelledby="final-title">
-      <div class="content-shell">
-        <p class="eyebrow">Your galaxy starts here</p>
-        <h2 id="final-title">Start building your galaxy.</h2>
-        <p>Available now for iPhone and iPad.</p>
-        <a class="app-store-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663" aria-label="Download Solyx on the App Store">
-          <img src="./assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" loading="lazy">
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wide-shell footer-layout">
-      <div>
-        <a class="brand" href="#top" aria-label="Solyx home">
-          <img src="./assets/solyx-icon.svg" alt="" width="34" height="34">
-          <span>Solyx</span>
-        </a>
-        <p>A habit tracker that turns consistency into a galaxy.</p>
-      </div>
+      </section>
+      <section
+        class="download section-shell"
+        id="download"
+        aria-labelledby="download-title"
+      >
+        <img
+          class="download-icon"
+          src="./assets/solyx-icon.svg"
+          alt=""
+          width="88"
+          height="88"
+          loading="lazy"
+        />
+        <h2 id="download-title">Start small.<br />Build your universe.</h2>
+        <p>A habit tracker that gives your effort<br />somewhere to live.</p>
+        <div class="download-action">
+          <a class="app-store-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663" aria-label="Download Solyx on the App Store">
+            <img src="./assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" loading="lazy" />
+          </a>
+        </div>
+        <p class="subscription-note">
+          Subscription required. 7-day yearly trial for eligible new
+          subscribers.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer section-shell">
+      <a class="brand" href="#top"
+        ><img
+          src="./assets/solyx-icon.svg"
+          alt=""
+          width="30"
+          height="30"
+        /><span>Solyx</span></a
+      >
       <div class="footer-links">
-        <a href="./support/">Support</a>
-        <a href="./privacy/">Privacy</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
-        <a href="mailto:support@solyxapp.com">Contact</a>
+        <a href="./support/">Support</a><a href="./privacy/">Privacy</a
+        ><a
+          href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+          >Terms</a
+        ><a href="mailto:support@solyxapp.com">Contact</a>
       </div>
-      <p class="copyright">© 2026 Solyx. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+      <p>&copy; 2026 Solyx</p>
+    </footer>
+  </body>
 </html>
