@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solyxapp.com/sitemap.xml
