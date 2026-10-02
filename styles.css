@@ -162,13 +162,14 @@ a:hover {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
 }
 .hero-universe {
   position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 58%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 58%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
 }
 .galaxy-art {
   position: absolute;
@@ -928,10 +929,16 @@ details[open] p {
   transform: scale(0.97);
 }
 .scroll-story {
-  min-height: 85svh;
+  min-height: 210svh;
+  padding-block: 0;
+}
+.scroll-story-stage {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-block: 130px;
+  padding-block: 96px;
 }
 .scroll-story p {
   font-size: 48px;
@@ -943,7 +950,7 @@ details[open] p {
   text-wrap: pretty;
 }
 .scroll-story span {
-  transition: color 100ms linear;
+  transition: none;
 }
 .app-tour {
   background: var(--bg, #050505);
@@ -1106,8 +1113,8 @@ details[open] p {
 }
 @media (max-width: 700px) {
   .scroll-story {
-    min-height: 75svh;
-    padding-block: 88px;
+    min-height: 210svh;
+    padding-block: 0;
   }
   .scroll-story p {
     font-size: 30px;
@@ -1160,6 +1167,8 @@ details[open] p {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .scroll-story { min-height: 75svh; }
+  .scroll-story-stage { position: static; min-height: 75svh; }
   .scroll-story span {
     color: var(--text) !important;
   }

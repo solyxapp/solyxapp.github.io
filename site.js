@@ -11,18 +11,23 @@ statement.replaceChildren(
   }),
 );
 let queued = false;
+const story = statement.closest("section");
+const stage = story.querySelector(".scroll-story-stage");
+const wordElements = [...statement.children];
 function paintScroll() {
   queued = false;
-  const rect = statement.closest("section").getBoundingClientRect();
+  const rect = story.getBoundingClientRect();
+  // Finish before the sticky stage releases, leaving a short fully lit hold.
+  const travel = Math.max(1, (rect.height - stage.offsetHeight) * 0.85);
   const progress = reducedMotion.matches
     ? 1
     : Math.max(
         0,
-        Math.min(1, (innerHeight * 0.75 - rect.top) / (rect.height * 0.65)),
+        Math.min(1, -rect.top / travel),
       );
-  [...statement.children].forEach((word, index) => {
+  wordElements.forEach((word, index) => {
     const light = Math.max(0, Math.min(1, progress * words.length - index));
-    const c = Math.round(122 + light * 122);
+    const c = Math.round(52 + light * 192);
     word.style.color = `rgb(${c} ${c} ${c})`;
   });
 }
