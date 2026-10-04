@@ -171,9 +171,17 @@ try {
   let last = 0;
   let elapsed = 0;
   let frameCount = 0;
+  let contextLost = false;
+  let sizeKey = "";
+  function draw() {
+    if (contextLost) return;
+    renderer.render(scene, camera);
+    hero.classList.remove("galaxy-unavailable");
+    hero.classList.add("galaxy-ready");
+  }
   function render(now = 0) {
     frame = undefined;
-    if (!visible || document.hidden) {
+    if (!visible || document.hidden || contextLost) {
       last = 0;
       return;
     }
@@ -186,7 +194,7 @@ try {
       -0.85 + Math.sin(elapsed * 0.13) * 0.055 + pointerY * 0.04;
     galaxy.rotation.y += (pointerX * 0.09 - galaxy.rotation.y) * 0.025;
     background.rotation.z = elapsed * 0.0015;
-    renderer.render(scene, camera);
+    draw();
     if (frameCount++ % 30 === 0) canvas.dataset.frame = String(frameCount);
     if (!reduced.matches) frame = requestAnimationFrame(render);
   }
@@ -198,6 +206,10 @@ try {
   function resize() {
     const { width, height } = hero.getBoundingClientRect();
     const ratio = Math.min(devicePixelRatio, width < 701 ? 1.5 : 1.75);
+    if (!width || !height || contextLost) return;
+    const nextSizeKey = `${width}:${height}:${ratio}`;
+    if (nextSizeKey === sizeKey) return;
+    sizeKey = nextSizeKey;
     renderer.setPixelRatio(ratio);
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
@@ -206,6 +218,8 @@ try {
     uniforms.pixelRatio.value = ratio;
     uniforms.pointScale.value = width < 701 ? 0.9 : 1;
     camera.updateProjectionMatrix();
+    // Resizing clears the drawing buffer; repaint before the browser composites it.
+    draw();
     start();
   }
   new ResizeObserver(resize).observe(hero);
@@ -231,19 +245,20 @@ try {
   reduced.addEventListener("change", start);
   canvas.addEventListener("webglcontextlost", (event) => {
     event.preventDefault();
-    visible = false;
+    contextLost = true;
     cancelAnimationFrame(frame);
     hero.classList.remove("galaxy-ready");
+    hero.classList.add("galaxy-unavailable");
   });
   canvas.addEventListener("webglcontextrestored", () => {
-    visible = true;
-    hero.classList.add("galaxy-ready");
+    contextLost = false;
+    sizeKey = "";
     resize();
   });
   resize();
-  renderer.render(scene, camera);
-  hero.classList.add("galaxy-ready");
 } catch (error) {
+  hero.classList.remove("galaxy-ready");
+  hero.classList.add("galaxy-unavailable");
   // Keep the original bitmap as a readable fallback when WebGL is unavailable.
   console.warn("Live galaxy unavailable; using image fallback.", error);
 }

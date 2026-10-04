@@ -172,6 +172,7 @@ a:hover {
   mask-image: linear-gradient(to bottom, #000 58%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
 }
 .galaxy-art {
+  visibility: hidden;
   position: absolute;
   left: 50%;
   top: 125px;
@@ -194,13 +195,12 @@ a:hover {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1.2s ease;
 }
 .galaxy-ready .galaxy-canvas {
   opacity: 1;
 }
-.galaxy-ready .galaxy-art {
-  visibility: hidden;
+.galaxy-unavailable .galaxy-art {
+  visibility: visible;
 }
 .hero-content {
   text-align: center;
