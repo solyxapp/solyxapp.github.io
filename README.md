@@ -2,16 +2,16 @@
 
 Static, mobile-first product website for Solyx. There is no build step. Opening `index.html` directly provides the HTML/image fallback; use the local HTTP preview for the self-hosted Three.js modules.
 
-## NOT DEPLOYED: Release Gate
+## Release Status
 
-The release preparation in this worktree is local only and must not be published
-until the coordinated app release is verified. Homepage, support and privacy now
-contain final launch copy, including Lifetime; that copy is NOT evidence that
-Lifetime is already available. No copy edits are deferred to launch day.
-See `RELEASE-READINESS-2026-10-11.md` for evidence and remaining release gates.
-The final consistency audit is authorized to commit verified, scoped website
-changes and push only `origin/website/app-store-launch`. Neither that commit nor
-the branch push authorizes publication. Do not push to either publishing `main`.
+On October 14, 2026, Joseph confirmed the public release of Solyx 1.1 and
+authorized publication of this website update. App Store Connect independently
+confirmed version 1.1 (19) as READY_FOR_DISTRIBUTION and Solyx Lifetime as an
+APPROVED non-consumable purchase, with a USA base price of $79.99 USD.
+This supersedes the earlier pre-launch publication hold. Production deployment
+uses `org/main` in `solyxapp/solyxapp.github.io`; GitHub Pages build status and
+the public homepage, support, and privacy pages must be checked after pushing.
+See `RELEASE-READINESS-2026-10-11.md` for the historical preparation evidence.
 
 Use `node scripts/release-check.cjs --preview` for local validation. The default
 release check exits 2 unless the operator supplies
@@ -34,7 +34,8 @@ Monthly and yearly plans are auto-renewing subscriptions until canceled.
 Lifetime is a $79.99 USD one-time, non-consumable purchase that does not renew;
 no subscription is needed with Lifetime. Local prices and full purchase terms
 are shown in the app. The 7-day yearly trial is for eligible new subscribers,
-not Lifetime. This describes the prepared release, not verified live availability.
+not Lifetime. App Store Connect release and Lifetime approval were verified on
+October 14, 2026; local prices and eligibility remain authoritative in the app.
 
 ## Launch
 

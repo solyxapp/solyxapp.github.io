@@ -1,6 +1,18 @@
 # Solyx Website Release Readiness
 
-Status: **NOT DEPLOYED. FINAL LAUNCH COPY PREPARED LOCALLY.**
+## October 14 release authorization
+
+Joseph confirmed that Solyx 1.1 is released to all users and requested publication.
+Read-only App Store Connect checks confirmed version 1.1 (19) is
+READY_FOR_DISTRIBUTION, Lifetime is APPROVED and NON_CONSUMABLE, and its current
+USA base price is $79.99 USD. The previous publication hold below is superseded.
+Deployment target: `org/main`, `solyxapp/solyxapp.github.io`, GitHub Pages at
+https://solyxapp.com/. The dirty primary website checkout remains untouched.
+Support device wording now includes iPad as well as iPhone.
+
+## Historical pre-launch audit
+
+Status at the time of the audit: **NOT DEPLOYED. FINAL LAUNCH COPY PREPARED LOCALLY.**
 
 Do not publish until the coordinated release gate is satisfied. The user has
 authorized the final consistency audit to commit verified scoped website changes
