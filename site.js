@@ -44,10 +44,3 @@ addEventListener("scroll", queueScroll, { passive: true });
 addEventListener("resize", queueScroll);
 reducedMotion.addEventListener("change", queueScroll);
 paintScroll();
-const collection = document.querySelector(".collection");
-new IntersectionObserver((entries) => {
-  collection.classList.toggle("in-view", entries[0].isIntersecting);
-}).observe(collection);
-document.addEventListener("visibilitychange", () => {
-  collection.classList.toggle("page-hidden", document.hidden);
-});

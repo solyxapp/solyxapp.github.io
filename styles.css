@@ -1080,8 +1080,9 @@ details[open] p {
   animation-direction: reverse;
   animation-duration: 65s;
 }
-.collection.in-view:not(.page-hidden) .collection-track {
+.collection.in-view:not(.page-hidden) .collection-track.ready {
   animation-play-state: running;
+  will-change: transform;
 }
 .collection-item {
   flex: 0 0 240px;
@@ -1113,8 +1114,8 @@ details[open] p {
   padding: 8px 12px 24px;
 }
 .collection-item img {
-  filter: drop-shadow(0 0 16px rgb(var(--collection-light) / 0.38))
-    drop-shadow(0 0 30px rgb(var(--collection-light) / 0.2));
+  /* The native app exports already include their atmospheric glow. */
+  filter: none;
 }
 .collection-item svg {
   filter: drop-shadow(0 0 5px rgb(var(--collection-light) / 0.8))
@@ -1131,7 +1132,7 @@ details[open] p {
 }
 @keyframes collection-drift {
   to {
-    transform: translateX(calc(-33.333333% - 6.666667px));
+    transform: translate3d(calc(-33.333333% - 6.666667px), 0, 0);
   }
 }
 @media (max-width: 700px) {
