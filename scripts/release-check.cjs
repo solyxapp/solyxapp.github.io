@@ -78,9 +78,14 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4186';
       assert.match(text, /You do not need a subscription with Lifetime/);
       assert.doesNotMatch(text, /forthcoming|not available yet/i);
     });
-    if (route === 'privacy') await check('privacy purchase terminology preserves effective date', async () => {
+    if (route === 'privacy') await check('privacy describes event-only analytics and purchase processing', async () => {
       const text = (await page.locator('main').innerText()).replace(/\s+/g, ' ');
-      assert.match(text, /Effective September 29, 2026/);
+      assert.match(text, /Updated October 27, 2026/);
+      assert.match(text, /PostHog/);
+      assert.match(text, /pseudonymous, not fully anonymous/);
+      assert.match(text, /Share usage analytics/);
+      assert.match(text, /United States/);
+      assert.match(text, /do not sell this data/);
       assert.match(text, /including subscriptions and Lifetime access/);
       assert.match(text, /retrieve purchase options/);
       assert.doesNotMatch(text, /subscription access/);
