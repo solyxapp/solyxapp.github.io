@@ -11,11 +11,14 @@ Mobile-first, product-led, dark celestial design. The app's real screenshot artw
 - Preserve the existing screenshots. No fabricated ratings, testimonials, awards, or user counts.
 - Full-bleed galaxy opening with Solyx as the H1. Plain App Store availability until the release is verified. No signup collection.
 - Full-bleed live Three.js spiral galaxy, not a scaled screenshot. Layered stellar arms, unresolved starlight, slow rotation, and restrained pointer parallax on desktop. Continuous while visible; static for system Reduced Motion, suspended offscreen and in background tabs. No visible motion toggle, as requested.
-- Features appear sequentially with actual screenshots on Three.js bevelled phones. Alternating desktop composition becomes a single column on mobile. No tabs or scroll locking. Device orientation responds subtly to native scroll; renders stop offscreen.
-- A short word-by-word scroll-lit statement follows the galaxy. Opposing discovery rows use native Solyx Rare and Legendary planet portraits and canonical constellation coordinates. Repeated copies are hidden from accessibility APIs. Reduced Motion makes the statement fully bright and the rows manually scrollable.
+- Opening scene ("the phone rises out of the galaxy"): the galaxy, hero, and app tour share one pinned viewport (`.cosmos`, 600svh of scroll). The first 16% of the scroll fades the hero up and raises one dark-titanium CSS iPhone from the galaxy core while the Three.js camera dollies in and the sky dims; the rest crossfades the real Habits, Galaxy, Archive, and Mission Control screenshots, with captions that hand off rather than overlap. Mobile puts the caption under the phone; desktop puts it left with the phone at 64%. Driven by `assets/sky.js` writing `--rise`, `--shown`, and `--copy`; transform and opacity only. Without JS or with Reduced Motion the steps stack in normal flow.
+- Opposing discovery rows use native Solyx Rare and Legendary planet portraits and canonical constellation coordinates. Repeated copies are hidden from accessibility APIs. Reduced Motion makes the rows manually scrollable.
+- On phones (700px and narrower) a solid App Store bar (`.dock`) slides up once the hero badge is gone and steps aside for the closing download section. One elevation: a 1px line, no shadow.
+- No interactive demo on the site; the app's onboarding covers that.
 
 ## References
 
+- https://www.bevel.health: smooth, product-first scrolling with the phone early (Joseph, November 2, 2026).
 - https://opalapp.com: restrained celestial presentation and a prominent store destination.
 - https://scrollmine.com: product-led transitions and direct copy.
 - https://wisprflow.ai: distinctive typography and continuous visual storytelling.

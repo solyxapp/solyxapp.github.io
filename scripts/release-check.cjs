@@ -67,12 +67,14 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4186';
     const text = (await page.locator('.faq-list').textContent()).replace(/\s+/g, ' ');
     assert.match(text, /RevenueCat manages purchase access and limited purchase analytics/);
   });
-  await check('distant screenshot textures are deferred', async () => {
-    assert.ok(!screenshots.some(url => /reveal|archive|mission-control/.test(url)));
+  await check('app screenshots load once, habits first', async () => {
+    assert.match(screenshots[0] || '', /habits/);
     assert.equal(screenshots.length, new Set(screenshots).size);
   });
-  await check('scroll story remains accessible as text', async () => {
-    assert.match(await page.locator('[data-scroll-words]').ariaSnapshot(), /That morning walk/);
+  await check('phone tour keeps four real screens with captions', async () => {
+    assert.equal(await page.locator('.sky-step img').count(), 4);
+    assert.equal(await page.locator('.sky-step h3').count(), 4);
+    assert.equal(await page.locator('.cosmos.is-live').count(), 1);
   });
   for (const route of ['support', 'privacy']) {
     await page.goto(`${base}/${route}/`);

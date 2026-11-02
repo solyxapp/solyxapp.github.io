@@ -27,7 +27,6 @@ createServer(async (request, response) => {
       [
         "/index.html",
         "/styles.css",
-        "/site.js",
         "/robots.txt",
         "/sitemap.xml",
         "/privacy/index.html",

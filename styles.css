@@ -111,6 +111,9 @@ a:hover {
 .skip-link:focus {
   top: 8px;
 }
+.skip-link:hover {
+  color: var(--bg);
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -173,20 +176,10 @@ a:hover {
   color: var(--bg);
 }
 .hero {
-  height: calc(100svh - 150px);
-  min-height: 730px;
+  height: 100svh;
+  min-height: 640px;
   max-height: 1050px;
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-.hero-universe {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, #000 58%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 58%, rgba(0, 0, 0, 0.85) 72%, rgba(0, 0, 0, 0.35) 88%, transparent 100%);
 }
 .galaxy-art {
   visibility: visible;
@@ -272,149 +265,8 @@ a:hover {
 .hero .button {
   margin-top: 24px;
 }
-.hero-bottom {
-  position: absolute;
-  inset: auto 32px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: var(--muted);
-}
 .hero-content {
   animation: arrive 1.1s var(--ease) both;
-}
-.intro {
-  padding-block: 64px 110px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-.intro p {
-  font-size: 20px;
-  color: var(--muted);
-  max-width: 460px;
-}
-.intro p span {
-  display: block;
-  color: var(--text);
-  margin-top: 20px;
-}
-.app-tour {
-  background: #0b0b0d;
-  border-block: 1px solid var(--line);
-}
-.tour-heading {
-  padding-block: 88px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 32px;
-}
-.tour-heading p {
-  color: var(--muted);
-  font-size: 17px;
-  max-width: 245px;
-}
-.tour-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  position: relative;
-}
-.tour-device {
-  position: sticky;
-  top: 40px;
-  height: calc(100svh - 80px);
-  min-height: 540px;
-  max-height: 860px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  grid-column: 2;
-  grid-row: 1;
-}
-.phone {
-  position: relative;
-  width: 270px;
-  aspect-ratio: 1206/2622;
-  border-radius: 36px;
-  overflow: hidden;
-  background: #000;
-  outline: 1px solid #626166;
-  outline-offset: 4px;
-  box-shadow: 0 36px 60px -24px #000;
-  flex-shrink: 0;
-}
-.phone img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.tour-device .phone {
-  height: min(70svh, 620px);
-  width: auto;
-  max-width: 100%;
-}
-.tour-screen {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition:
-    opacity 0.7s var(--ease),
-    transform 0.9s var(--ease);
-  transform: translateY(14px);
-}
-.tour-screen.is-current {
-  opacity: 1;
-  transform: none;
-}
-.tour-progress {
-  display: flex;
-  gap: 10px;
-  margin-top: 28px;
-}
-.tour-progress i {
-  width: 6px;
-  height: 6px;
-  background: #67656e;
-  border-radius: 50%;
-  transition:
-    background 0.3s,
-    width 0.4s var(--ease);
-}
-.tour-progress i.is-current {
-  width: 28px;
-  border-radius: 8px;
-  background: var(--gold);
-}
-.tour-chapters {
-  grid-column: 1;
-  grid-row: 1;
-}
-.chapter {
-  min-height: 85svh;
-  display: flex;
-  align-items: center;
-  padding: 100px 0;
-}
-.chapter-copy h3 {
-  font-size: 44px;
-  margin-bottom: 24px;
-}
-.chapter-copy p {
-  font-size: 19px;
-  color: var(--muted);
-  max-width: 390px;
-}
-.chapter-copy .detail {
-  font-size: 14px;
-  color: var(--text);
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
 }
 .mobile-phone {
   display: none;
@@ -570,44 +422,10 @@ details[open] p {
   gap: 10px;
   margin: 32px auto 0;
 }
-.launch-status {
-  padding: 18px 26px;
-  border: 1px solid #64626b;
-  border-radius: 8px;
-  font-size: 18px;
-}
-.download-platform {
-  font-size: 13px;
-  color: var(--muted);
-}
 .download > .subscription-note {
   font-size: 12px;
   max-width: 350px;
   margin: 24px auto 0;
-}
-.store-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--text);
-  color: var(--bg);
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-align: left;
-  line-height: 1.1;
-}
-.store-badge:hover {
-  background: var(--gold);
-  color: var(--bg);
-}
-.store-badge small {
-  display: block;
-  font-size: 11px;
-}
-.store-badge strong {
-  display: block;
-  font-size: 24px;
-  font-weight: 600;
 }
 .site-footer {
   display: flex;
@@ -735,12 +553,6 @@ details[open] p {
   .site-header {
     width: calc(100% - 40px);
   }
-  .tour-layout {
-    gap: 48px;
-  }
-  .chapter-copy h3 {
-    font-size: 36px;
-  }
   .personal,
   .plans,
   .questions {
@@ -751,12 +563,6 @@ details[open] p {
   }
   .hero-statement {
     font-size: 32px;
-  }
-  .hero {
-    min-height: 700px;
-  }
-  .intro {
-    gap: 32px;
   }
 }
 @media (max-width: 700px) {
@@ -781,11 +587,6 @@ details[open] p {
   .nav-download {
     font-size: 12px;
     padding: 10px 13px;
-  }
-  .hero {
-    height: calc(100svh - 104px);
-    min-height: 610px;
-    max-height: 860px;
   }
   .hero-content {
     padding: 100px 20px 0;
@@ -819,64 +620,6 @@ details[open] p {
       black 78%,
       transparent
     );
-  }
-  .hero-bottom {
-    inset: auto 20px 16px;
-    font-size: 11px;
-  }
-  .intro {
-    display: block;
-    padding-block: 44px 76px;
-  }
-  .intro h2 {
-    font-size: 42px;
-  }
-  .intro p {
-    font-size: 18px;
-    margin-top: 26px;
-  }
-  .tour-heading {
-    display: block;
-    padding-top: 64px;
-    padding-bottom: 0;
-  }
-  .tour-heading h2 {
-    font-size: 40px;
-  }
-  .tour-heading p {
-    margin-top: 20px;
-    max-width: none;
-    font-size: 16px;
-  }
-  .tour-layout {
-    display: block;
-  }
-  .tour-device {
-    display: none;
-  }
-  .chapter {
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 68px 0 64px;
-    gap: 40px;
-  }
-  .chapter + .chapter {
-    border-top: 1px solid var(--line);
-  }
-  .chapter-copy h3 {
-    font-size: 32px;
-    margin-bottom: 18px;
-  }
-  .chapter-copy p {
-    font-size: 17px;
-    max-width: 420px;
-  }
-  .chapter-copy .detail {
-    font-size: 13px;
-    margin-top: 20px;
-    padding-top: 16px;
   }
   .mobile-phone {
     display: block;
@@ -982,12 +725,7 @@ details[open] p {
   .hero-content {
     padding-inline: 16px;
   }
-  .hero-bottom > span {
-    max-width: 140px;
-  }
   h2,
-  .intro h2,
-  .tour-heading h2,
   .personal h2,
   .plans h2,
   .questions h2 {
@@ -1012,96 +750,6 @@ details[open] p {
 .button:active,
 .nav-download:active {
   transform: scale(0.97);
-}
-.scroll-story {
-  min-height: 210svh;
-  padding-block: 0;
-}
-.scroll-story-stage {
-  position: sticky;
-  top: 0;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding-block: 96px;
-}
-.scroll-story p {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
-  max-width: 960px;
-  margin-inline: auto;
-  text-wrap: pretty;
-}
-.scroll-story span {
-  transition: none;
-}
-.app-tour {
-  background: var(--bg, #050505);
-  border: 0;
-}
-.app-tour .tour-heading {
-  display: block;
-  text-align: center;
-  padding-block: 60px 0;
-}
-.app-tour .tour-heading p {
-  max-width: none;
-  margin-top: 24px;
-}
-.app-tour .tour-layout {
-  display: block;
-}
-.app-tour .chapter {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  min-height: 760px;
-  padding-block: 48px;
-  border: 0;
-}
-.app-tour .chapter:nth-child(even) .chapter-copy {
-  grid-column: 2;
-  grid-row: 1;
-}
-.app-tour .chapter:nth-child(even) .product-phone {
-  grid-column: 1;
-  grid-row: 1;
-}
-.app-tour .chapter-copy .detail {
-  border: 0;
-  padding-top: 0;
-  color: #b9b8c0;
-}
-.product-phone {
-  position: relative;
-  width: 100%;
-  height: 660px;
-  margin: 0;
-}
-.product-phone > img {
-  position: absolute;
-  height: 82%;
-  width: auto;
-  max-width: 80%;
-  object-fit: contain;
-  top: 9%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 32px;
-}
-.product-phone canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  opacity: 0;
-}
-.product-phone.scene-ready > img {
-  visibility: hidden;
-}
-.product-phone.scene-ready canvas {
-  opacity: 1;
 }
 .collection {
   overflow: hidden;
@@ -1198,35 +846,6 @@ details[open] p {
   }
 }
 @media (max-width: 700px) {
-  .scroll-story {
-    min-height: 210svh;
-    padding-block: 0;
-  }
-  .scroll-story p {
-    font-size: 30px;
-    line-height: 1.45;
-    text-align: left;
-  }
-  .app-tour .tour-heading {
-    text-align: left;
-    padding-block: 24px 20px;
-  }
-  .app-tour .chapter {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    min-height: 0;
-    padding-block: 42px 20px;
-  }
-  .app-tour .chapter:nth-child(even) .chapter-copy,
-  .app-tour .chapter:nth-child(even) .product-phone {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .product-phone {
-    height: 550px;
-    width: calc(100% + 32px);
-    margin-left: -16px;
-  }
   .collection {
     padding-block: 50px 70px;
   }
@@ -1253,11 +872,6 @@ details[open] p {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scroll-story { min-height: 75svh; }
-  .scroll-story-stage { position: static; min-height: 75svh; }
-  .scroll-story span {
-    color: var(--text) !important;
-  }
   .collection-window {
     overflow-x: auto;
     mask-image: none;
@@ -1268,4 +882,297 @@ details[open] p {
   .collection-item[aria-hidden] {
     display: none;
   }
+}
+
+/* Opening scene: galaxy, hero, and the phone that rises out of it.
+   Without JS or with Reduced Motion the steps simply stack in flow. */
+.cosmos {
+  position: relative;
+  isolation: isolate;
+  --rise: 0;
+}
+.cosmos-sky {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 100svh;
+  min-height: 640px;
+  max-height: 1050px;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+  mask-image: linear-gradient(to bottom, #000 62%, transparent);
+}
+.cosmos-mark {
+  position: absolute;
+  top: 100svh;
+}
+.is-live .cosmos-mark {
+  top: 98svh;
+}
+.sky {
+  padding: 24px 0 96px;
+}
+.sky-device {
+  display: none;
+}
+.sky-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: min(1120px, calc(100% - 44px));
+  display: grid;
+  gap: 88px;
+}
+.sky-step {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  text-align: center;
+}
+.sky-screen {
+  --flow-w: min(280px, 70vw);
+  width: var(--flow-w);
+  aspect-ratio: 660 / 1435;
+  border-radius: calc(var(--flow-w) * 0.14);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 9px #1b1b1f,
+    0 0 0 10px #48474d,
+    0 36px 70px -24px #000;
+}
+.sky-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sky-copy h3 {
+  font-size: 30px;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.sky-copy p {
+  max-width: 34ch;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.cosmos.is-live {
+  height: 600svh;
+}
+.is-live .cosmos-pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+.is-live .cosmos-sky {
+  inset: 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  opacity: calc(1 - var(--rise) * 0.45);
+}
+.is-live .hero {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  opacity: calc(1 - var(--rise) * 1.8);
+  transform: translate3d(0, calc(var(--rise) * -12svh), 0);
+  will-change: transform, opacity;
+}
+.is-live .hero-content {
+  animation: none;
+}
+.is-live .sky {
+  --top: 7svh;
+  --screen-h: min(calc(93svh - 262px), 640px);
+  --screen-w: calc(var(--screen-h) * 0.46);
+  --phone-x: 50%;
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  transform: translate3d(0, calc((1 - var(--rise)) * 76svh), 0)
+    scale(calc(0.9 + var(--rise) * 0.1));
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.is-live .sky-list {
+  display: block;
+  width: auto;
+}
+.is-live .sky-step {
+  --shown: 0;
+  --copy: 0;
+  display: block;
+}
+.is-live .sky-step:first-child {
+  --shown: 1;
+  --copy: 1;
+}
+.is-live .sky-screen,
+.is-live .sky-device {
+  position: absolute;
+  left: var(--phone-x);
+  top: calc(var(--top) + 9px);
+  width: var(--screen-w);
+  height: var(--screen-h);
+  translate: -50% 0;
+  border-radius: calc(var(--screen-w) * 0.14);
+}
+.is-live .sky-screen {
+  aspect-ratio: auto;
+  box-shadow: none;
+  background: #000;
+  opacity: var(--shown);
+}
+.is-live .sky-device {
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow:
+    0 0 0 9px #1b1b1f,
+    0 0 0 10px #4c4b51,
+    0 0 0 11px #18181b,
+    0 44px 90px -30px #000;
+}
+/* The Dynamic Island sits over every screen, as on the device. */
+.is-live .sky-device::after {
+  content: "";
+  position: absolute;
+  top: 2.1%;
+  left: 50%;
+  width: 30%;
+  height: 4.4%;
+  translate: -50% 0;
+  border-radius: 999px;
+  background: #000;
+}
+.is-live .sky-copy {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: calc(var(--top) + var(--screen-h) + 40px);
+  opacity: var(--copy);
+  transform: translate3d(0, calc((1 - var(--copy)) * 10px), 0);
+}
+.is-live .sky-copy h3 {
+  font-size: 26px;
+}
+.is-live .sky-copy p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+@media (min-width: 900px) {
+  .sky-step {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+  }
+  .sky-copy {
+    order: -1;
+  }
+  .sky-copy p {
+    margin-inline: 0;
+  }
+  .sky-copy h3 {
+    font-size: 44px;
+    margin-inline: 0;
+  }
+  .is-live .sky {
+    --top: 12svh;
+    --screen-h: min(76svh, 760px);
+    --phone-x: 64%;
+  }
+  .is-live .sky-copy {
+    left: max(40px, calc(50% - 560px));
+    right: auto;
+    top: 50%;
+    width: min(400px, 34%);
+    transform: translate3d(0, calc(-50% + (1 - var(--copy)) * 10px), 0);
+  }
+  .is-live .sky-copy h3 {
+    font-size: 48px;
+  }
+  .is-live .sky-copy p {
+    margin-top: 16px;
+    font-size: 19px;
+  }
+}
+
+/* iPhone App Store bar: appears once the hero badge is gone. */
+.dock {
+  display: none;
+}
+@media (max-width: 700px) {
+  .dock {
+    display: flex;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 30;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 10px 10px 12px;
+    background: #141416;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transform: translate3d(0, calc(100% + 30px), 0);
+    visibility: hidden;
+    transition:
+      transform 0.5s var(--ease),
+      visibility 0s linear 0.5s;
+  }
+  .dock.is-shown {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.5s var(--ease);
+  }
+  .dock img {
+    border-radius: 10px;
+  }
+  .dock p {
+    flex: 1;
+    display: grid;
+    line-height: 1.25;
+  }
+  .dock strong {
+    font-size: 16px;
+  }
+  .dock span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .dock-get {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: var(--text);
+    color: var(--bg);
+    font-weight: 700;
+  }
+  .dock-get:hover {
+    color: var(--bg);
+    background: var(--gold);
+  }
+  .dock-get:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  .site-footer {
+    padding-bottom: 96px;
+  }
+}
+::selection {
+  background: var(--gold);
+  color: var(--bg);
 }

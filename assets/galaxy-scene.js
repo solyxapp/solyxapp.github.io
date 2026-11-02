@@ -1,7 +1,8 @@
 import * as THREE from "./three.module.js";
 
 const canvas = document.querySelector(".galaxy-canvas");
-const hero = document.querySelector(".hero");
+const hero = document.querySelector(".cosmos");
+const sky = document.querySelector(".cosmos-sky");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Deterministic stars keep the composition stable across reloads and devices.
@@ -164,6 +165,8 @@ try {
   const background = starField(1200, true);
   scene.add(background);
 
+  let baseDistance = 27;
+  let baseY = -5.2;
   let pointerX = 0;
   let pointerY = 0;
   let visible = true;
@@ -189,9 +192,13 @@ try {
     last = now;
     if (!reduced.matches) elapsed += delta;
     uniforms.time.value = elapsed;
-    disk.rotation.z = elapsed * 0.032;
+    // The opening scroll dollies toward the core while the phone rises in front of it.
+    const rise = Number(hero.style.getPropertyValue("--rise")) || 0;
+    camera.position.z = baseDistance - rise * baseDistance * 0.24;
+    galaxy.position.y = baseY + rise * 2.4;
+    disk.rotation.z = elapsed * 0.032 + rise * 0.5;
     galaxy.rotation.x =
-      -0.85 + Math.sin(elapsed * 0.13) * 0.055 + pointerY * 0.04;
+      -0.85 + Math.sin(elapsed * 0.13) * 0.055 + pointerY * 0.04 + rise * 0.18;
     galaxy.rotation.y += (pointerX * 0.09 - galaxy.rotation.y) * 0.025;
     background.rotation.z = elapsed * 0.0015;
     draw();
@@ -204,7 +211,7 @@ try {
     frame = requestAnimationFrame(render);
   }
   function resize() {
-    const { width, height } = hero.getBoundingClientRect();
+    const { width, height } = sky.getBoundingClientRect();
     const ratio = Math.min(devicePixelRatio, width < 701 ? 1.5 : 1.75);
     if (!width || !height || contextLost) return;
     const nextSizeKey = `${width}:${height}:${ratio}`;
@@ -213,8 +220,10 @@ try {
     renderer.setPixelRatio(ratio);
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
-    camera.position.set(0, 0, width < 701 ? 27 : 22);
-    galaxy.position.y = width < 701 ? -5.2 : -3.7;
+    baseDistance = width < 701 ? 27 : 22;
+    baseY = width < 701 ? -5.2 : -3.7;
+    camera.position.set(0, 0, baseDistance);
+    galaxy.position.y = baseY;
     uniforms.pixelRatio.value = ratio;
     uniforms.pointScale.value = width < 701 ? 0.9 : 1;
     camera.updateProjectionMatrix();
@@ -222,7 +231,7 @@ try {
     draw();
     start();
   }
-  new ResizeObserver(resize).observe(hero);
+  new ResizeObserver(resize).observe(sky);
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
     start();

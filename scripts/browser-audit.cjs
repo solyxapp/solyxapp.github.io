@@ -36,27 +36,29 @@ let browser;
       await page.screenshot({ path: path.join(output, file) });
       report.screenshots.push(file);
     }
-    await check(`${width}: accessible story`, async () => assert.match(await page.locator('[data-scroll-words]').ariaSnapshot(), /That morning walk/));
+    // Scrub the pinned phone tour to each screen's midpoint and confirm it is the one shown.
     for (let index = 0; index < 4; index++) {
-      const phone = page.locator('.product-phone').nth(index);
-      await phone.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
-      await check(`${width}: phone ${index + 1} renders`, async () => {
-        await page.waitForFunction(i => document.querySelectorAll('.product-phone')[i].classList.contains('scene-ready'), index);
-        const img = phone.locator('img');
-        assert.ok(await img.evaluate(el => el.complete && el.naturalWidth > 0));
-        const stats = await sharp(await phone.locator('canvas').screenshot()).stats();
-        assert.ok(stats.channels.slice(0, 3).some(channel => channel.stdev > 5));
+      await page.evaluate(i => {
+        const cosmos = document.querySelector('.cosmos');
+        const travel = cosmos.offsetHeight - innerHeight;
+        scrollTo({ top: cosmos.offsetTop + travel * (0.16 + 0.84 * (i + 0.5) / 4), behavior: 'instant' });
+      }, index);
+      await page.waitForTimeout(400);
+      await check(`${width}: phone screen ${index + 1} shown`, async () => {
+        const step = page.locator('.sky-step').nth(index);
+        assert.equal(await step.getAttribute('data-current'), '');
+        assert.ok(await step.locator('img').evaluate(el => el.complete && el.naturalWidth > 0));
       });
       if ([390, 1440].includes(width) && index === 1) {
         const file = `galaxy-chapter-${width}.png`;
-        await page.locator('.chapter').nth(index).screenshot({ path: path.join(output, file) });
+        await page.screenshot({ path: path.join(output, file) });
         report.screenshots.push(file);
       }
     }
     await page.locator('.collection').scrollIntoViewIfNeeded();
     await page.waitForTimeout(1500);
     await check(`${width}: catalog populated`, async () => assert.ok(await page.locator('.collection-item').count() > 0));
-    await page.getByText('Is Solyx free?', { exact: true }).click();
+    await page.getByText('How much does Solyx cost?', { exact: true }).click();
     await check(`${width}: FAQ opens with launch price`, async () => {
       assert.match(await page.locator('details[open]').innerText(), /\$79\.99 USD/);
     });
@@ -104,7 +106,7 @@ let browser;
   await check('no-JS image and FAQ work', async () => {
     await fallback.locator('.product-phone').first().scrollIntoViewIfNeeded();
     assert.ok(await fallback.locator('.product-phone img').first().isVisible());
-    await fallback.getByText('Is Solyx free?', { exact: true }).click();
+    await fallback.getByText('How much does Solyx cost?', { exact: true }).click();
     assert.match(await fallback.locator('details[open]').innerText(), /Lifetime is a one-time purchase and does not renew/);
   });
   await check('no runtime or HTTP errors', async () => assert.deepEqual(report.errors, []));

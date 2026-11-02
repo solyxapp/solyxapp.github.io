@@ -21,8 +21,10 @@ test('native catalog assets exist and exclude solar-system portraits', async () 
 });
 
 test('collection no longer generates portraits using WebGL', () => {
-  const source = readFileSync(new URL('../assets/product-scenes.js', import.meta.url), 'utf8');
-  assert.doesNotMatch(source, /buildPlanets|toDataURL|data-planets/);
+  for (const script of ['../assets/galaxy-scene.js', '../assets/sky.js']) {
+    const source = readFileSync(new URL(script, import.meta.url), 'utf8');
+    assert.doesNotMatch(source, /buildPlanets|toDataURL|data-planets/);
+  }
 });
 
 test('selection includes both rarities without duplicates or catalog mutation', async () => {
