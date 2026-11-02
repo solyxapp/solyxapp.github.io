@@ -272,11 +272,6 @@ a:hover {
 .hero .button {
   margin-top: 24px;
 }
-.availability {
-  font-size: 12px;
-  margin-top: 12px;
-  color: var(--muted);
-}
 .hero-bottom {
   position: absolute;
   inset: auto 32px 24px;
@@ -447,6 +442,61 @@ a:hover {
 .personal-details p {
   color: var(--muted);
   font-size: 17px;
+}
+.plans {
+  border-top: 1px solid var(--line);
+  padding-block: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+.plans-heading p {
+  color: var(--muted);
+  font-size: 17px;
+  margin-top: 20px;
+  max-width: 34ch;
+}
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.plan {
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.plan:first-child {
+  border-top: 1px solid var(--line);
+}
+.plan h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+.plan-tag {
+  font-size: 13px;
+  color: var(--gold);
+}
+.plan-price {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.plan-price span {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.plan-featured .plan-price {
+  color: var(--gold);
+}
+.plan > p:last-child {
+  color: var(--muted);
+  font-size: 16px;
+  margin-top: 6px;
+  max-width: 48ch;
 }
 .questions {
   border-top: 1px solid var(--line);
@@ -692,6 +742,7 @@ details[open] p {
     font-size: 36px;
   }
   .personal,
+  .plans,
   .questions {
     gap: 48px;
   }
@@ -851,9 +902,19 @@ details[open] p {
     margin-top: 28px;
     padding-top: 28px;
   }
+  .plans,
   .questions {
     display: block;
     padding-block: 70px;
+  }
+  .plans h2 {
+    font-size: 40px;
+  }
+  .plan-list {
+    margin-top: 36px;
+  }
+  .plan-price {
+    font-size: 32px;
   }
   .questions h2 {
     font-size: 40px;
@@ -928,6 +989,7 @@ details[open] p {
   .intro h2,
   .tour-heading h2,
   .personal h2,
+  .plans h2,
   .questions h2 {
     font-size: 36px;
   }

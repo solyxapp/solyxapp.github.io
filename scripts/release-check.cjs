@@ -50,6 +50,19 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4186';
     assert.match(text, /Subscriptions renew automatically until canceled/);
     assert.doesNotMatch(text, /forthcoming|coming|not available yet/i);
   });
+  await check('pricing lists all three plans in USD', async () => {
+    const text = (await page.locator('#plans').textContent()).replace(/\s+/g, ' ');
+    assert.match(text, /Solyx Monthly \$6\.99 \/ month/);
+    assert.match(text, /Solyx Yearly 7-day free trial \$29\.99 \/ year/);
+    assert.match(text, /Solyx Lifetime \$79\.99 once/);
+    assert.match(text, /local currency/);
+  });
+  await check('smart app banner, wide share card, and iPhone-only copy', async () => {
+    assert.equal(await page.locator('meta[name="apple-itunes-app"]').getAttribute('content'), 'app-id=6775335663');
+    assert.equal(await page.locator('meta[name="twitter:card"]').getAttribute('content'), 'summary_large_image');
+    assert.match(await page.locator('meta[property="og:image"]').getAttribute('content'), /solyx-share-card\.png$/);
+    assert.doesNotMatch(await page.content(), /iPad/);
+  });
   await check('account FAQ includes purchase analytics rather than subscription-only analytics', async () => {
     const text = (await page.locator('.faq-list').textContent()).replace(/\s+/g, ' ');
     assert.match(text, /RevenueCat manages purchase access and limited purchase analytics/);

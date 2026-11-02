@@ -7,30 +7,59 @@
     <meta name="theme-color" content="#050505" />
     <meta
       name="description"
-      content="Your habits build your galaxy. Solyx is a habit tracker for iPhone and iPad with 100+ planets and 100+ constellations to discover."
+      content="Your habits build your galaxy. Solyx is a habit tracker for iPhone with 100+ planets and 100+ constellations to discover."
     />
     <meta property="og:title" content="Solyx - Your habits build your galaxy." />
     <meta
       property="og:description"
-      content="Your habits build your galaxy. Discover 100+ planets and 100+ constellations with a habit tracker for iPhone and iPad."
+      content="Your habits build your galaxy. Discover 100+ planets and 100+ constellations with a habit tracker for iPhone."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://solyxapp.com/" />
     <meta
       property="og:image"
-      content="https://solyxapp.com/assets/solyx-app-icon.png"
+      content="https://solyxapp.com/assets/solyx-share-card.png"
     />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="1024" />
-    <meta property="og:image:alt" content="Solyx's golden sun and orbit app icon" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Solyx: Your habits build your galaxy. A golden spiral galaxy beside the App Store badge." />
+    <meta property="og:site_name" content="Solyx" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Solyx - Your habits build your galaxy.</title>
+    <meta name="apple-itunes-app" content="app-id=6775335663" />
     <link rel="canonical" href="https://solyxapp.com/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Solyx",
+            "url": "https://solyxapp.com/"
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "Solyx",
+            "description": "A habit tracker for iPhone where your habits build your galaxy. Discover 100+ planets and 100+ constellations.",
+            "url": "https://solyxapp.com/",
+            "image": "https://solyxapp.com/assets/solyx-app-icon.png",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS 17 or later",
+            "installUrl": "https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663",
+            "offers": [
+              { "@type": "Offer", "name": "Solyx Monthly", "price": "6.99", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Solyx Yearly", "price": "29.99", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Solyx Lifetime", "price": "79.99", "priceCurrency": "USD" }
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="./assets/solyx-app-icon.svg" type="image/svg+xml" />
     <link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" sizes="180x180" />
     <link rel="modulepreload" href="./assets/galaxy-scene.js?v=20261003" />
-    <link rel="stylesheet" href="./styles.css?v=20261015" />
+    <link rel="stylesheet" href="./styles.css?v=20261102" />
     <script src="./site.js?v=20261015" defer></script>
     <script type="module" src="./assets/collection.js?v=20261015"></script>
     <script type="module" src="./assets/galaxy-scene.js?v=20261003"></script>
@@ -48,7 +77,7 @@
         /><span>Solyx</span></a
       >
       <nav aria-label="Main navigation">
-        <a href="#inside">The app</a><a href="#questions">Questions</a>
+        <a href="#inside">The app</a><a href="#plans">Pricing</a><a href="#questions">Questions</a>
       </nav>
       <a class="nav-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663">Get Solyx</a>
     </header>
@@ -63,12 +92,11 @@
           <p class="hero-statement">Your habits build your galaxy.</p>
           <p class="hero-description">
             Small steps become something extraordinary.<br />A habit tracker for
-            iPhone and iPad.
+            iPhone.
           </p>
           <a class="app-store-download" href="https://apps.apple.com/us/app/solyx-habit-tracker/id6775335663" aria-label="Download Solyx on the App Store">
             <img src="./assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" />
           </a>
-          <p class="availability">Now on the App Store</p>
         </div>
         <div class="hero-bottom">
           <span>A universe built by you.</span>
@@ -227,6 +255,29 @@
           </div>
         </div>
       </section>
+      <section class="plans section-shell" id="plans" aria-labelledby="plans-title">
+        <div class="plans-heading">
+          <h2 id="plans-title">Pick the pace<br />that fits.</h2>
+          <p>Prices in USD. The app shows prices in your local currency and the full terms before you purchase.</p>
+        </div>
+        <ul class="plan-list">
+          <li class="plan">
+            <h3>Solyx Monthly</h3>
+            <p class="plan-price">$6.99 <span>/ month</span></p>
+            <p>Renews monthly until canceled.</p>
+          </li>
+          <li class="plan plan-featured">
+            <h3>Solyx Yearly <span class="plan-tag">7-day free trial</span></h3>
+            <p class="plan-price">$29.99 <span>/ year</span></p>
+            <p>About $2.50 a month. Renews yearly until canceled. Eligible new subscribers can try it free for 7 days.</p>
+          </li>
+          <li class="plan">
+            <h3>Solyx Lifetime</h3>
+            <p class="plan-price">$79.99 <span>once</span></p>
+            <p>A one-time purchase that never renews. No subscription needed.</p>
+          </li>
+        </ul>
+      </section>
       <section
         class="questions section-shell"
         id="questions"
@@ -234,10 +285,6 @@
       >
         <h2 id="questions-title">A few things<br />you might wonder.</h2>
         <div class="faq-list">
-          <details>
-            <summary>When can I download Solyx?</summary>
-            <p>Solyx is available now on the App Store for iPhone and iPad. Download it using the button on this page.</p>
-          </details>
           <details>
             <summary>How do habits become a galaxy?</summary>
             <p>
@@ -247,17 +294,27 @@
             </p>
           </details>
           <details>
-            <summary>Is Solyx free?</summary>
+            <summary>How much does Solyx cost?</summary>
             <p>
               Choose a monthly or yearly subscription, or Lifetime access with
-              a one-time purchase of $79.99 USD. The app shows prices in your
-              local currency and the full terms before you purchase.
+              a one-time purchase of $79.99 USD. Solyx Monthly is $6.99 USD a
+              month and Solyx Yearly is $29.99 USD a year. The app shows prices
+              in your local currency and the full terms before you purchase.
             </p>
             <p>
               Eligible new subscribers can try the yearly plan free for 7 days.
               Monthly and yearly subscriptions renew automatically until canceled.
               Lifetime is a one-time purchase and does not renew.
               You do not need a subscription with Lifetime.
+            </p>
+          </details>
+          <details>
+            <summary>Can I cancel anytime?</summary>
+            <p>
+              Yes. You can manage or cancel a subscription from your Apple
+              Account subscription settings, and you keep access until the end
+              of the period you paid for. Lifetime never renews, so there is
+              nothing to cancel.
             </p>
           </details>
           <details>
@@ -272,8 +329,8 @@
           <details>
             <summary>Will it work on my device?</summary>
             <p>
-              Solyx is built for iPhone and iPad running iOS or iPadOS 17 or
-              later. An Android version has not been announced.
+              Solyx is built for iPhone running iOS 17 or later. An Android
+              version has not been announced.
             </p>
           </details>
         </div>
@@ -299,9 +356,9 @@
           </a>
         </div>
         <p class="subscription-note">
-          Monthly, yearly, or Lifetime. Lifetime is $79.99 USD once, with local
-          pricing shown in the app. Eligible new subscribers can try the yearly
-          plan free for 7 days. Subscriptions renew automatically until canceled.
+          Monthly, yearly, or Lifetime. Lifetime is $79.99 USD once. Eligible
+          new subscribers can try the yearly plan free for 7 days. Subscriptions
+          renew automatically until canceled.
         </p>
       </section>
     </main>
